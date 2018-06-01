@@ -10,8 +10,8 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     GridView gridView;
-    ArrayAdapter arrayAdapter;
-    ArrayList<Integer> manghinhanh;
+    ThuvienanhAdapter thuvienanhAdapter;
+    ArrayList<Thuvienanh> manghinhanh;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,16 +21,17 @@ public class MainActivity extends AppCompatActivity {
 
         manghinhanh = new ArrayList<>();
 
-        manghinhanh.add(R.mipmap.ic_launcher);
-        manghinhanh.add(R.mipmap.ic_launcher);
-        manghinhanh.add(R.mipmap.ic_launcher);
-        manghinhanh.add(R.mipmap.ic_launcher);
-        manghinhanh.add(R.mipmap.ic_launcher);
-        manghinhanh.add(R.mipmap.ic_launcher);
+        manghinhanh.add(new Thuvienanh(R.mipmap.ic_launcher));
+        manghinhanh.add(new Thuvienanh(R.mipmap.ic_launcher));
+        manghinhanh.add(new Thuvienanh(R.mipmap.ic_launcher));
+        manghinhanh.add(new Thuvienanh(R.mipmap.ic_launcher));
+        manghinhanh.add(new Thuvienanh(R.mipmap.ic_launcher));
+        manghinhanh.add(new Thuvienanh(R.mipmap.ic_launcher));
 
-        arrayAdapter = new ArrayAdapter(MainActivity.this,android.R.layout.simple_list_item_1,manghinhanh);
 
-        gridView.setAdapter(arrayAdapter);
+        thuvienanhAdapter = new ThuvienanhAdapter(MainActivity.this,android.R.layout.simple_list_item_1,manghinhanh);
+
+        gridView.setAdapter(thuvienanhAdapter);
 
     }
 }
